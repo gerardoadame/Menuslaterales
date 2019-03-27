@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements datos.OnFragmentInteractionListener
+public class MainActivity extends AppCompatActivity implements datos.OnFragmentInteractionListener, fragmenttres.OnFragmentInteractionListener
 {
 
     DrawerLayout drawerLayout;
