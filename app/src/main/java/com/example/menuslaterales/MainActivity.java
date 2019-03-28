@@ -49,25 +49,28 @@ public class MainActivity extends AppCompatActivity implements datos.OnFragmentI
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
 
+
                 String pos;
                 pos = (String) listView.getAdapter().getItem(position);
                 Toast.makeText(MainActivity.this,pos,Toast.LENGTH_LONG).show();
-
+                drawerLayout.closeDrawer(listView);
                 switch(pos)
                 {
                     case "Opcion1":
 
                         datos datos= new datos();
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction transaction;
+                        transaction= getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.contenedor,datos);
-                        transaction.commit();
+                        transaction.commitNow();
                         break;
                     case "Opcion2":
                         fragmenttres fragmenttres = new fragmenttres();
                         FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
                         transaction1.replace(R.id.contenedor,fragmenttres);
-                        transaction1.commit();
+                        transaction1.commitNow();
                         break;
+
                 }
 
 //                datos frag = datos.newInstance("datos","Fragment 2");
